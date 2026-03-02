@@ -1,3 +1,4 @@
 # rjgreroHVP
 High Value Listings
-https://github.com/rehangrero/rjgreroHVP/aqua_vista_investor_profile.html
+https://rehangrero.github.io/rjgreroHVP/aqua_vista_investor_profile.html
+
