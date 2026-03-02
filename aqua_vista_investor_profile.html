@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqua Vista — Investor Profile | Galle, Sri Lanka</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #b8972a;
+    --gold-light: #d4b95a;
+    --navy: #0d1f35;
+    --navy-light: #1a3050;
+    --cream: #f7f3ec;
+    --cream-dark: #ede7dc;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(160deg, var(--navy) 0%, #0a2a45 50%, #1a4a6b 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(184,151,42,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 30%, rgba(26,74,107,0.4) 0%, transparent 60%);
+  }
+
+  .wave-lines {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.12;
+  }
+
+  .hero-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 28px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+
+  .logo-mark {
+    width: 64px;
+    height: 64px;
+    position: relative;
+  }
+
+  .logo-mark svg { width: 100%; height: 100%; }
+
+  .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 9vw, 120px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 0.9;
+    text-align: center;
+    letter-spacing: -1px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+
+  .hero h1 em {
+    display: block;
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-meta {
+    margin-top: 48px;
+    display: flex;
+    gap: 48px;
+    animation: fadeUp 1s ease 0.8s both;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+    border-top: 1px solid rgba(184,151,42,0.4);
+    padding-top: 16px;
+  }
+
+  .hero-meta-item .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold-light);
+    font-weight: 300;
+  }
+
+  .hero-meta-item .lbl {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.4);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease 1.2s both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(184,151,42,0.6), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 40px;
+  }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #444;
+    max-width: 640px;
+  }
+
+  /* ── INTRO ── */
+  .intro-section {
+    background: var(--cream);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .intro-image {
+    position: relative;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .intro-image::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--gold);
+    z-index: -1;
+  }
+
+  .image-caption {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+
+  /* ── LOCATION ── */
+  .location-section {
+    background: var(--navy);
+  }
+
+  .location-section .section-title { color: #fff; }
+  .location-section .body-text { color: rgba(255,255,255,0.7); }
+  .location-section .section-label { color: var(--gold-light); }
+
+  .location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .location-features {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .feature-card {
+    border-top: 1px solid rgba(184,151,42,0.3);
+    padding-top: 20px;
+  }
+
+  .feature-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── SEA VIEW ── */
+  .seaview-section {
+    background: var(--cream);
+  }
+
+  .seaview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .highlight-box {
+    background: var(--navy);
+    padding: 40px;
+    margin-top: 40px;
+  }
+
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+  }
+
+  /* ── IMAGE GALLERY ── */
+  .gallery-section {
+    background: var(--navy-light);
+    padding: 80px 0;
+  }
+
+  .gallery-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px 48px;
+  }
+
+  .gallery-header .section-title { color: #fff; }
+  .gallery-header .section-label { color: var(--gold-light); }
+
+  .gallery-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--navy);
+  }
+
+  .gallery-item.wide {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26,48,80,0.8) 0%, rgba(10,31,53,0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .gallery-caption {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(184,151,42,0.8);
+  }
+
+  /* ── MARKET ── */
+  .market-section {
+    background: var(--cream-dark);
+  }
+
+  .market-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .market-card {
+    background: #fff;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .market-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .market-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+
+  .market-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #e0dbd2;
+  }
+
+  .stat { text-align: center; }
+  .stat .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold);
+  }
+  .stat .label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ── DEVELOPMENT ── */
+  .dev-section {
+    background: var(--navy);
+  }
+
+  .dev-section .section-title { color: #fff; }
+  .dev-section .section-label { color: var(--gold-light); }
+  .dev-section .body-text { color: rgba(255,255,255,0.7); }
+  .dev-section .divider { background: var(--gold); }
+
+  .dev-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .dev-option {
+    background: rgba(255,255,255,0.05);
+    padding: 36px 28px;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .dev-option:hover {
+    background: rgba(184,151,42,0.12);
+    border-top-color: var(--gold);
+  }
+
+  .dev-option h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .dev-option p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── OWNERSHIP ── */
+  .ownership-section {
+    background: var(--cream);
+  }
+
+  .ownership-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .info-box {
+    border: 1px solid var(--gold);
+    padding: 40px;
+  }
+
+  .info-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .info-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #0a2a45 100%);
+    text-align: center;
+    padding: 120px 48px;
+  }
+
+  .cta-section .section-label { color: var(--gold-light); margin-bottom: 20px; }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 48px;
+    line-height: 1.1;
+  }
+
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  .contact-item .type {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .contact-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 300;
+  }
+
+  .address-line {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 48px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.1); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .intro-grid, .location-grid, .seaview-grid, .market-grid,
+    .ownership-grid { grid-template-columns: 1fr; gap: 48px; }
+    .dev-options { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.wide { grid-column: span 1; }
+    .hero-meta { gap: 28px; }
+    .section-inner { padding: 72px 24px; }
+    .location-features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <svg class="wave-lines" viewBox="0 0 1440 200" preserveAspectRatio="none">
+    <path d="M0,100 C360,180 720,20 1440,100 L1440,200 L0,200 Z" fill="rgba(184,151,42,0.15)"/>
+    <path d="M0,140 C400,60 900,180 1440,100 L1440,200 L0,200 Z" fill="rgba(184,151,42,0.08)"/>
+  </svg>
+
+  <div class="hero-badge">Investor Profile — 2022 / 2023</div>
+
+  <div class="hero-logo">
+    <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="32,4 60,52 4,52" fill="none" stroke="#b8972a" stroke-width="2"/>
+      <polygon points="32,18 50,48 14,48" fill="rgba(184,151,42,0.15)" stroke="#d4b95a" stroke-width="1"/>
+      <circle cx="32" cy="52" r="4" fill="#b8972a"/>
+    </svg>
+    <div class="logo-text">Aqua Vista</div>
+  </div>
+
+  <h1>Investor<em>Profile</em></h1>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="num">203</div>
+      <div class="lbl">Perches</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="num">&lt;1km</div>
+      <div class="lbl">To Galle Fort</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="num">3</div>
+      <div class="lbl">Sea Views</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="num">99yr</div>
+      <div class="lbl">Lease Available</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ══ INTRODUCTION ══ -->
+<section class="intro-section">
+  <div class="section-inner">
+    <div class="intro-grid">
+      <div class="reveal">
+        <div class="intro-image">
+          <div style="width:100%;height:460px;background:linear-gradient(135deg,#0d1f35,#1a4a6b);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+            <div style="width:40px;height:1px;background:rgba(184,151,42,0.6);"></div>
+            <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(184,151,42,0.8);">Galle Fort — UNESCO World Heritage</div>
+            <div style="width:40px;height:1px;background:rgba(184,151,42,0.6);"></div>
+          </div>
+          <div class="image-caption">The Allure of Galle — UNESCO World Heritage Site</div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="section-label">Introduction</div>
+        <h2 class="section-title">A Rare Investment in Sri Lanka's Crown Jewel</h2>
+        <div class="divider"></div>
+        <p class="body-text">
+          This document explores the investment potential of the Aqua Vista land in Galle, Sri Lanka — a 203 perch bare land uniquely placed to access the touristic Galle Fort. The Galle Fort is a primary tourist destination in Sri Lanka, perhaps second only to the capital city.
+        </p>
+        <p class="body-text" style="margin-top:20px;">
+          The Fort enjoys steady flows of local and foreign tourists year round, making a tourist-focused development in this area highly feasible. This document explores the suitability of the location, its developmental possibilities, the area's current market, and long term potential.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION ══ -->
+<section class="location-section">
+  <div class="section-inner">
+    <div class="location-grid">
+      <div class="reveal">
+        <div class="section-label">Location Advantage</div>
+        <h2 class="section-title">Positioned at the Gateway to the Fort</h2>
+        <div class="divider"></div>
+        <p class="body-text">
+          The land is within a 5-minute drive from the Fort, and less than a kilometer as the crow flies. Directly on the Galle main road, all tourists arriving from Colombo or any major airport must pass this land to reach the Fort.
+        </p>
+        <p class="body-text" style="margin-top:20px;">
+          The Fort itself is an extremely constrained area with only very small boutique hotels within, forcing larger developments to look for land nearby. No blocks of this size are easily accessible in the vicinity.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div style="width:100%;height:380px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,42,0.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:32px;">
+          <div style="width:40px;height:1px;background:rgba(184,151,42,0.5);"></div>
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,151,42,0.7);text-align:center;">No. 145 & 145/1<br>Colombo Road, Galle</div>
+          <div style="width:120px;height:1px;background:rgba(184,151,42,0.3);margin:8px 0;"></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);text-align:center;letter-spacing:1px;">Adjacent to Galle Fort<br>Colombo–Galle Main Road</div>
+        </div>
+        <div class="location-features">
+          <div class="feature-card reveal reveal-delay-1">
+            <h4>Main Road Access</h4>
+            <p>Wide, direct road frontage with high visibility to all passing traffic</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-2">
+            <h4>5-Min to Fort</h4>
+            <p>Less than 1km from the UNESCO World Heritage Galle Fort</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-3">
+            <h4>Airport Access</h4>
+            <p>On the route from all major international airports in the country</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-3">
+            <h4>203 Perches</h4>
+            <p>Rare large-format plot — no comparable blocks available in the area</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEA VIEW ══ -->
+<section class="seaview-section">
+  <div class="section-inner">
+    <div class="seaview-grid">
+      <div class="reveal">
+        <div class="section-label">Natural Advantage</div>
+        <h2 class="section-title">Three Grand Sea Views from a Natural Promontory</h2>
+        <div class="divider"></div>
+        <p class="body-text">
+          The uniqueness of the land becomes clear upon examining its coast. The town area surrounding the Fort is otherwise congested and not very scenic, but as the land is a natural promontory it presents three grand sea views.
+        </p>
+        <p class="body-text" style="margin-top:20px;">
+          It is also worth noting that while Galle in general is vulnerable to tsunamis, this land is unlikely to be badly affected as it is significantly higher than the surrounding terrain — a notable safety advantage for any development.
+        </p>
+        <div class="highlight-box">
+          <p>"No blocks of this size are easily accessible within the vicinity of the Fort — a truly rare opportunity in one of Sri Lanka's most sought-after locations."</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div style="display:grid;gap:3px;">
+          <div style="width:100%;height:200px;background:linear-gradient(160deg,#0a2a45,#1a4a6b);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+            <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,151,42,0.7);">Sea View — Left Side</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;">
+            <div style="width:100%;height:140px;background:linear-gradient(135deg,#0d2540,#1a4a6b);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+              <div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(184,151,42,0.6);">Front View</div>
+            </div>
+            <div style="width:100%;height:140px;background:linear-gradient(135deg,#0a2030,#1a3a5b);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+              <div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(184,151,42,0.6);">Right Side</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <div class="section-label reveal">Images of the Land</div>
+    <h2 class="section-title reveal reveal-delay-1">The Aqua Vista Site</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-caption">Entrance 01 — Left Side</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-caption">Land View from Sea Side</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-caption">Entrance 02 — Right Side</div>
+      </div>
+    </div>
+    <div class="gallery-item wide">
+      <div class="gallery-placeholder">
+        <div class="gallery-caption">Sea Front — Breakwaters</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-caption">Sea View — Front</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARKET ══ -->
+<section class="market-section">
+  <div class="section-inner">
+    <div class="section-label reveal">Market Context</div>
+    <h2 class="section-title reveal reveal-delay-1">Strong Demand in a Recovering Market</h2>
+    <div class="divider reveal reveal-delay-2"></div>
+    <div class="market-grid" style="margin-top:0;">
+      <div class="market-card reveal reveal-delay-1">
+        <h3>Sri Lankan Tourist Market</h3>
+        <p>
+          The Sri Lankan tourism industry grew aggressively over the last decade. After declining in 2019 (terrorist attack) and sharply during the pandemic, the SLTDA forecasts full recovery within 3 years with a return to year-on-year growth trend. Approximately 600,000 tourists visited in 2022, on track with projections despite the political crisis.
+        </p>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="value">600K+</div>
+            <div class="label">Arrivals 2022</div>
+          </div>
+          <div class="stat">
+            <div class="value">3yr</div>
+            <div class="label">Full Recovery</div>
+          </div>
+          <div class="stat">
+            <div class="value">↑ YoY</div>
+            <div class="label">Growth Trend</div>
+          </div>
+        </div>
+      </div>
+      <div class="market-card reveal reveal-delay-2">
+        <h3>Galle Tourist Market</h3>
+        <p>
+          The Fort sees steady flows of Chinese, Indian, and European tourists year round, especially busy in the European winter. Galle is far outperforming any other location in Sri Lanka. Despite having several five-star hotels, demand in 2018 exceeded supply — creating significant premium rates even for small rooms and hostels during peak season.
+        </p>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="value">#1</div>
+            <div class="label">Tourist Destination</div>
+          </div>
+          <div class="stat">
+            <div class="value">4 Star+</div>
+            <div class="label">Supply Gap</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="market-card reveal" style="margin-top:2px;background:#fff;">
+      <h3>Apartment Market</h3>
+      <p>
+        A growing international apartment market has emerged in Galle. The Fairway Galle Apartments (250 units) continue to see interest from both local and foreign buyers. Recent removal of restrictions on foreign apartment ownership in Sri Lanka unlocks significant new demand. A sizeable expat retirement community has already established itself in Galle, attracted by the tropical climate and cost of living.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEVELOPMENT OPTIONS ══ -->
+<section class="dev-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Development Potential</div>
+      <h2 class="section-title">Flexible Use — Ready to Build</h2>
+      <div class="divider"></div>
+      <p class="body-text">
+        A project was previously planned for this land — a mixed hotel and apartment development — with all approvals obtained and piling work completed. A new developer may use the existing approvals and piling directly, or amend them for alternative developments.
+      </p>
+    </div>
+    <div class="dev-options">
+      <div class="dev-option reveal reveal-delay-1">
+        <h4>Major Hotel</h4>
+        <p>Premium hospitality development capitalising on Galle Fort proximity and sea views</p>
+      </div>
+      <div class="dev-option reveal reveal-delay-2">
+        <h4>Apartment Complex</h4>
+        <p>International standard residential units for local & foreign buyers or tourist rental</p>
+      </div>
+      <div class="dev-option reveal reveal-delay-3">
+        <h4>Retail Space</h4>
+        <p>Commercial development with exceptional visibility on the Galle main road</p>
+      </div>
+      <div class="dev-option reveal reveal-delay-3">
+        <h4>Villa Scheme</h4>
+        <p>Exclusive villa development leveraging the promontory's multiple sea views</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OWNERSHIP ══ -->
+<section class="ownership-section">
+  <div class="section-inner">
+    <div class="ownership-grid">
+      <div class="reveal">
+        <div class="section-label">Ownership Structure</div>
+        <h2 class="section-title">Foreign Investment Welcome</h2>
+        <div class="divider"></div>
+        <p class="body-text">
+          While Sri Lanka maintains restrictions on foreign freehold land ownership, foreigners are free to purchase a long lease. This land is available on a 99-year lease, granting the purchaser full rights to use and develop the land as they see fit for the entire term.
+        </p>
+        <p class="body-text" style="margin-top:20px;">
+          Restrictions on foreign apartment ownership have been recently removed — opening significant new investment and sales channels for any mixed-use development on this site.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="info-box">
+          <div class="tag">Key Terms</div>
+          <h4>99-Year Lease</h4>
+          <p>Full development rights for the complete lease period. Foreign buyers may own apartments within any development outright under recently relaxed ownership laws.</p>
+        </div>
+        <div class="info-box" style="margin-top:16px;">
+          <div class="tag">Ready State</div>
+          <h4>Approvals & Piling</h4>
+          <p>Existing government approvals and completed piling work can be utilised or amended, significantly reducing time to development commencement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="section-label">Get in Touch</div>
+  <h2>Ready to Invest<br><em style="font-style:italic;color:var(--gold-light);">in Galle's Future?</em></h2>
+  <div class="cta-contacts">
+    <div class="contact-item">
+      <div class="type">Phone</div>
+      <div class="value">+94 777 063 173</div>
+    </div>
+    <div class="contact-item">
+      <div class="type">Email</div>
+      <div class="value"><a href="mailto:rehan@rjgrero.com" style="color:inherit;text-decoration:none;">rehan@rjgrero.com</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="type">Website</div>
+      <div class="value"><a href="https://www.rjgrrero.com" target="_blank" style="color:inherit;text-decoration:none;">www.rjgrrero.com</a></div>
+    </div>
+  </div>
+  <div class="address-line">Adjacent to Galle Fort</div>
+</section>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
